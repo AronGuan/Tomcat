@@ -1,0 +1,6 @@
+#Windows
+.settings
+bin
+.classpath
+.project
+.jar
