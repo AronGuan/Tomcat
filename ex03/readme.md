@@ -1,36 +1,35 @@
-##Ó¦ÓÃ  
-3¸öÄ£¿é£ºÁ¬½ÓÆ÷Ä£¿é£¬Æô¶¯Ä£¿éºÍºËĞÄÄ£¿é  
-Æô¶¯Ä£¿é(Bootstrap):¸ºÔğÆô¶¯Ó¦ÓÃ³ÌĞò  
+##åº”ç”¨  å¢å¼ºå¯¹è¿æ¥å™¨çš„è®¤è¯†
+3ä¸ªæ¨¡å—ï¼šè¿æ¥å™¨æ¨¡å—ï¼Œå¯åŠ¨æ¨¡å—å’Œæ ¸å¿ƒæ¨¡å—  
+å¯åŠ¨æ¨¡å—(Bootstrap):è´Ÿè´£å¯åŠ¨åº”ç”¨ç¨‹åº  
 
-Á¬½ÓÆ÷Ä£¿é·ÖÒÔÏÂ5¸öÀàĞÍ  
-1. Á¬½ÓÆ÷¼°ÆäÖ§³ÖÀà(HttpConnectorºÍHttpProcesor)  
-2. ±íÊ¾HTTPÇëÇóµÄÀà(HttpRequest)¼°ÆäÖ§³ÖÀà  
-3. ±íÊ¾HTTPÏìÓ¦µÄÀà(HttpResponse)¼°ÆäÖ§³ÖÀà  
-4. Íâ¹ÛÀà(HttpRequestFacadeºÍHttpResponseFacade)  
-5. ³£Á¿Àà  
+è¿æ¥å™¨æ¨¡å—åˆ†ä»¥ä¸‹5ä¸ªç±»å‹  
+1. è¿æ¥å™¨åŠå…¶æ”¯æŒç±»(HttpConnectorå’ŒHttpProcesor)  
+2. è¡¨ç¤ºHTTPè¯·æ±‚çš„ç±»(HttpRequest)åŠå…¶æ”¯æŒç±»  
+3. è¡¨ç¤ºHTTPå“åº”çš„ç±»(HttpResponse)åŠå…¶æ”¯æŒç±»  
+4. å¤–è§‚ç±»(HttpRequestFacadeå’ŒHttpResponseFacade)  
+5. å¸¸é‡ç±»  
 
-ºËĞÄÄ£¿é°üº¬Á½¸öÀà:servletProcessorÀàºÍstaticResourceProcessorÀà
+æ ¸å¿ƒæ¨¡å—åŒ…å«ä¸¤ä¸ªç±»:servletProcessorç±»å’ŒstaticResourceProcessorç±»
+> 
+æœ¬ç« å…³é”®åœ¨äºå¯¹è¿æ¥å™¨çš„è®¤è¯†ï¼Œå…¶å®ƒéƒ¨åˆ†äº†è§£å³å¯
+Bootstrapç±»çš„main()æ–¹æ³•å®ä¾‹åŒ–HttpConnectorç±»ï¼Œå¹¶è°ƒç”¨å…¶start()æ–¹æ³•å°±å¯ä»¥å¯åŠ¨åº”ç”¨ç¨‹åºã€‚  
+HttpConnectorç±»:å®ç°Runnableæ¥å£ï¼Œä¼šåˆ›å»ºä¸€ä¸ªHttpConnectorå®ä¾‹ï¼Œè¯¥å®ä¾‹å¦èµ·ä¸€ä¸ªçº¿ç¨‹æ¥è¿è¡Œã€‚  
+run()æ–¹æ³•ï¼šå¦‚ä¸‹ä¸‰ä¸ªæ“ä½œ  
+1. ç­‰å¾…HTTPè¯·æ±‚  
+2. ä¸ºæ¯ä¸ªè¯·æ±‚åˆ›å»ºä¸€ä¸ªHttpPorcessorå®ä¾‹  
+3. è°ƒç”¨HttpProcessorå¯¹è±¡çš„process()æ–¹æ³•  
+HttpProcessorç±»çš„process()æ–¹æ³•  
+1. åˆ›å»ºä¸€ä¸ªHttpRequestå¯¹è±¡  
+2. åˆ›å»ºä¸€ä¸ªHttpResponseå¯¹è±¡  
+3. è§£æHTTPè¯·æ±‚çš„ç¬¬1è¡Œå†…å®¹å’Œè¯·æ±‚å¤´ä¿¡æ¯ï¼Œå¡«å……HttpRequestå¯¹è±¡  
+4. å°†HttpRequestå¯¹è±¡å’ŒHttpResponseå¯¹è±¡ä¼ é€’ç»™servletProcessoræˆ–
+StaticResourceProcessorçš„process()æ–¹æ³•ã€‚
+servletProcessorç±»ä¼šè°ƒç”¨è¯·æ±‚çš„servletå®ä¾‹çš„service()æ–¹æ³•ï¼Œ
+staticResourceProcessorç±»ä¼šå°†è¯·æ±‚çš„é™æ€èµ„æºå‘é€ç»™å®¢æˆ·ç«¯
 
-BootstrapÀàµÄmain()·½·¨ÊµÀı»¯HttpConnectorÀà£¬²¢µ÷ÓÃÆästart()·½·¨¾Í¿ÉÒÔÆô¶¯Ó¦ÓÃ³ÌĞò¡£  
-
-HttpConnectorÀà:ÊµÏÖRunnable½Ó¿Ú£¬»á´´½¨Ò»¸öHttpConnectorÊµÀı£¬¸ÃÊµÀıÁíÆğÒ»¸öÏß³ÌÀ´ÔËĞĞ¡£  
-run()·½·¨£ºÈçÏÂÈı¸ö²Ù×÷  
-1. µÈ´ıHTTPÇëÇó  
-2. ÎªÃ¿¸öÇëÇó´´½¨Ò»¸öHttpPorcessorÊµÀı  
-3. µ÷ÓÃHttpProcessor¶ÔÏóµÄprocess()·½·¨  
-
-HttpProcessorÀàµÄprocess()·½·¨  
-1. ´´½¨Ò»¸öHttpRequest¶ÔÏó  
-2. ´´½¨Ò»¸öHttpResponse¶ÔÏó  
-3. ½âÎöHTTPÇëÇóµÄµÚ1ĞĞÄÚÈİºÍÇëÇóÍ·ĞÅÏ¢£¬Ìî³äHttpRequest¶ÔÏó  
-4. ½«HttpRequest¶ÔÏóºÍHttpResponse¶ÔÏó´«µİ¸øservletProcessor»ò
-StaticResourceProcessorµÄprocess()·½·¨¡£
-servletProcessorÀà»áµ÷ÓÃÇëÇóµÄservletÊµÀıµÄservice()·½·¨£¬
-staticResourceProcessorÀà»á½«ÇëÇóµÄ¾²Ì¬×ÊÔ´·¢ËÍ¸ø¿Í»§¶Ë
-
-»ñÈ¡²ÎÊı  
-ParameterMap:¼Ì³ĞHashMap,ÆäÖĞÓĞÒ»¸ölockedµÄ²¼¶û±äÁ¿£¬Ö»ÓĞµ±±äÁ¿lockedÖµÎªfalseÊÇ£¬²Å¿ÉÒÔ¶ÔParameterMap¶ÔÏóÖĞµÄÃû/Öµ¶Ô½øĞĞÌí¼Ó£¬¸üĞÂ»òÕßÉ¾³ı²Ù×÷¡£  
-¹Ø¼ü²¿·ÖµÄÀàÍ¼
+è·å–å‚æ•°  
+ParameterMap:ç»§æ‰¿HashMap,å…¶ä¸­æœ‰ä¸€ä¸ªlockedçš„å¸ƒå°”å˜é‡ï¼Œåªæœ‰å½“å˜é‡lockedå€¼ä¸ºfalseæ˜¯ï¼Œæ‰å¯ä»¥å¯¹ParameterMapå¯¹è±¡ä¸­çš„å/å€¼å¯¹è¿›è¡Œæ·»åŠ ï¼Œæ›´æ–°æˆ–è€…åˆ é™¤æ“ä½œã€‚  
+å…³é”®éƒ¨åˆ†çš„ç±»å›¾
 ![alt](https://github.com/AronGuan/Tomcat/blob/master/images/3-1.png)    
 ![alt](https://github.com/AronGuan/Tomcat/blob/master/images/3-2.png) 
 ![alt](https://github.com/AronGuan/Tomcat/blob/master/images/3-3.png) 
